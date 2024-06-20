@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 import daisyui from "daisyui";
+import tailwindScrollbar from "tailwind-scrollbar";
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",

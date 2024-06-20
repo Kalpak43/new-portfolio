@@ -8,7 +8,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function ProfileCard() {
   return (
-    <div className="rounded-xl bg-base-300 py-4 px-4 md:px-10 group">
+    <div className="rounded-xl bg-base-300 py-4 px-4 md:px-10 group transition-all duration-1000">
       <div className="text-center space-y-4">
         <div className=" max-w-[150px] mx-auto overflow-clip rounded-xl">
           <Image
@@ -16,7 +16,7 @@ export default function ProfileCard() {
             alt="Profile"
             width={300}
             height={300}
-            className="grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out hover:scale-125"
+            className="grayscale group-hover:grayscale-0 transition-all duration-1000 ease-in-out hover:scale-125"
           />
         </div>
         <div className="space-y-2">
