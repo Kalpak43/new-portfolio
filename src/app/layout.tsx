@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className + " px-4 md:px-20 py-10 grid grid-cols-1 lg:grid-cols-3 grid-row-1 gap-4 lg:h-[100dvh] bg-black "}>
+      <body className={poppins.className + " px-4 md:px-20 py-10 pb-28 lg:pb-10 grid grid-cols-1 lg:grid-cols-3 grid-row-1 gap-4 lg:h-[100dvh] bg-black "}>
         <ProfileCard />
         <div className="lg:col-span-2 space-y-4 flex flex-col flex-nowrap">
           <Navbar />
