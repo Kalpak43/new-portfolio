@@ -21,7 +21,7 @@ export default function Navbar() {
   const pathname = usePathname();
   console.log(pathname);
   return (
-    <div className="rounded-xl bg-base-300 p-4 flex justify-center lg:justify-between items-center gap-4">
+    <div className="rounded-xl bg-base-300 p-4 flex justify-center lg:justify-between items-center gap-4 sticky lg:static top-[1%] z-50 shadow-blue lg:shadow-none">
       <h3 className="font-bold uppercase hidden lg:block">
         {links.find((link) => link.href === pathname)?.label}
       </h3>
