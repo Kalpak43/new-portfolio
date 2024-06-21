@@ -1,5 +1,6 @@
 "use client";
 
+import Heading from "@/components/Heading";
 import React from "react";
 
 export default function ContactForm() {
@@ -31,6 +32,7 @@ export default function ContactForm() {
 
   return (
     <main className="py-6 lg:px-10 space-y-8" id="contact-me">
+      <Heading title="drop a message" />
       <form
         action=""
         className="grid grid-cols-1 md:grid-cols-2 gap-4"

@@ -1,3 +1,4 @@
+import Heading from "@/components/Heading";
 import ProficienctLine from "@/components/ProficienctLine";
 import VolunteeringCard from "@/components/VolunteeringCard";
 import React from "react";
@@ -72,6 +73,7 @@ export default function page() {
 
   return (
     <main className="py-6 lg:px-10 space-y-8" id="resume">
+      <Heading title="Resume" />
       <div className="space-y-4">
         <h4 className="text-2xl font-[600]">Experience</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
