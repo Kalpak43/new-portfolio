@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <div className="rounded-xl bg-base-300 p-4 flex justify-center lg:justify-between items-center gap-4 fixed lg:static bottom-0 left-0 right-0 mx-4 lg:mx-0 my-4 lg:my-0 z-50 shadow-blue lg:shadow-none">
       <h3 className="font-bold uppercase hidden lg:block">
-        {links.find((link) => link.href === pathname)?.label}
+        {links.find((link) => link.href.split("#")[0] === pathname)?.label}
       </h3>
       <nav className="flex gap-4">
         {" "}
@@ -33,7 +33,7 @@ export default function Navbar() {
               href={link.href}
               key={link.label}
               className={`btn btn-square ${
-                pathname === link.href ? "bg-gradient-blue" : "btn-accent"
+                pathname === link.href.split("#")[0] ? "bg-gradient-blue" : "btn-accent"
               }`}
             >
               <span className="text-center">{icons[link.icon]}</span>

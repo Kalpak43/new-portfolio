@@ -1,3 +1,5 @@
+import ProficienctLine from "@/components/ProficienctLine";
+import VolunteeringCard from "@/components/VolunteeringCard";
 import React from "react";
 
 export default function page() {
@@ -53,23 +55,23 @@ export default function page() {
       },
     ],
     tools: [
-        {
-            name: "VS Code",
-            proficiency: 80,
-        },
-        {
-            name: "Git/Github",
-            proficiency: 70,
-        },
-        {
-            name: "Figma",
-            proficiency: 70,
-        },
-    ]
+      {
+        name: "VS Code",
+        proficiency: 80,
+      },
+      {
+        name: "Git/Github",
+        proficiency: 70,
+      },
+      {
+        name: "Figma",
+        proficiency: 70,
+      },
+    ],
   };
 
   return (
-    <main className="py-6 lg:px-10 space-y-8">
+    <main className="py-6 lg:px-10 space-y-8" id="resume">
       <div className="space-y-4">
         <h4 className="text-2xl font-[600]">Experience</h4>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -104,67 +106,49 @@ export default function page() {
           <div className="space-y-2">
             <h5 className="font-[600]">Programming Languages</h5>
             {skills.programmingLanguages.map((language, index) => {
-              return (
-                <div className="space-y-1" key={index}>
-                  <p>{language.name}</p>
-                  <div className="flex rounded-full overflow-hidden">
-                    <div
-                      className={`w-[${language.proficiency}%] h-1 bg-gradient-blue`}
-                    ></div>
-                    <div className="h-1 bg-accent flex-1"></div>
-                  </div>
-                </div>
-              );
+              return <ProficienctLine {...language} key={index} />;
             })}
           </div>
           <div className="space-y-2">
             <h5 className="font-[600]">Frontend</h5>
             {skills.frontend.map((language, index) => {
-              return (
-                <div className="space-y-1" key={100+index}>
-                  <p>{language.name}</p>
-                  <div className="flex rounded-full overflow-hidden">
-                    <div
-                      className={`w-[${language.proficiency}%] h-1 bg-gradient-blue`}
-                    ></div>
-                    <div className="h-1 bg-accent flex-1"></div>
-                  </div>
-                </div>
-              );
+              return <ProficienctLine {...language} key={100 + index} />;
             })}
           </div>
           <div className="space-y-2">
             <h5 className="font-[600]">Backend</h5>
             {skills.backend.map((language, index) => {
-              return (
-                <div className="space-y-1" key={200+index}>
-                  <p>{language.name}</p>
-                  <div className="flex rounded-full overflow-hidden">
-                    <div
-                      className={`w-[${language.proficiency}%] h-1 bg-gradient-blue`}
-                    ></div>
-                    <div className="h-1 bg-accent flex-1"></div>
-                  </div>
-                </div>
-              );
+              return <ProficienctLine {...language} key={200 + index} />;
             })}
           </div>
           <div className="space-y-2">
             <h5 className="font-[600]">Tools</h5>
             {skills.tools.map((language, index) => {
-              return (
-                <div className="space-y-1" key={300+index}>
-                  <p>{language.name}</p>
-                  <div className="flex rounded-full overflow-hidden">
-                    <div
-                      className={`w-[${language.proficiency}%] h-1 bg-gradient-blue`}
-                    ></div>
-                    <div className="h-1 bg-accent flex-1"></div>
-                  </div>
-                </div>
-              );
+              return <ProficienctLine {...language} key={300 + index} />;
             })}
           </div>
+        </div>
+      </div>
+      <div className="space-y-4">
+        <div className="flex gap-2 items-center">
+          <h4 className="text-2xl font-[600]">Volunteering</h4>
+          <div className="h-[1px] bg-gradient-blue flex-1"></div>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <VolunteeringCard
+            duration="Aug, 2023 - Aug, 2024"
+            role="Core Team Member"
+            organization="GDSC GHRCE"
+            description="At the time, I work for different clients to create and enhance their products."
+            badge="/assets/images/volunteering/badge.webp"
+          />
+          <VolunteeringCard
+            duration="June, 2023 - Aug, 2023"
+            role="Web Developer"
+            organization="IEEE CS GHRCE"
+            description="At the time, I work for different clients to create and enhance their products."
+            badge="/assets/images/volunteering/ieee-logo.webp"
+          />
         </div>
       </div>
     </main>
