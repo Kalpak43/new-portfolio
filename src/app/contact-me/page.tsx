@@ -45,6 +45,7 @@ export default function ContactForm() {
             placeholder="Type here"
             className="input input-bordered w-full"
             name="name"
+            required
           />
         </label>
         <label className="form-control w-full">
@@ -56,6 +57,7 @@ export default function ContactForm() {
             placeholder="Type here"
             className="input input-bordered w-full"
             name="email"
+            required
           />
         </label>
         <label className="form-control w-full md:col-span-2">
@@ -68,6 +70,7 @@ export default function ContactForm() {
             className="textarea textarea-bordered w-full"
             placeholder="Type your message here"
             rows={5}
+            required
           />
         </label>
         <button
