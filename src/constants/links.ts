@@ -16,7 +16,7 @@ export const links = [
   },
   {
     href: "/contact-me",
-    label: "Contact",
+    label: "Drop a Message",
     icon: 3,
   },
 ];

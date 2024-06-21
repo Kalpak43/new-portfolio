@@ -22,7 +22,7 @@ export default function page() {
           <div className="h-[1px] bg-gradient-blue flex-1"></div>
         </div>
         <p>I can build beautiful user interfaces using my front end skills.</p>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="rounded-xl border-2 border-accent p-4">
             <FaCode size={40} className="text-info" />
             <h5 className="font-[600]">Web Apps</h5>

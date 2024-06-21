@@ -74,7 +74,7 @@ export default function page() {
     <main className="py-6 lg:px-10 space-y-8" id="resume">
       <div className="space-y-4">
         <h4 className="text-2xl font-[600]">Experience</h4>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="rounded-xl border-2 border-accent p-4">
             <p className="text-sm text-secondary">Feb, 2023 - Present</p>
             <h5 className="font-[600]">Web Developer Intern</h5>
@@ -102,7 +102,7 @@ export default function page() {
           <h4 className="text-2xl font-[600]">Skills</h4>
           <div className="h-[1px] bg-gradient-blue flex-1"></div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
           <div className="space-y-2">
             <h5 className="font-[600]">Programming Languages</h5>
             {skills.programmingLanguages.map((language, index) => {
@@ -134,7 +134,7 @@ export default function page() {
           <h4 className="text-2xl font-[600]">Volunteering</h4>
           <div className="h-[1px] bg-gradient-blue flex-1"></div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <VolunteeringCard
             duration="Aug, 2023 - Aug, 2024"
             role="Core Team Member"
