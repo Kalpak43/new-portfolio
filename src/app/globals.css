@@ -20,7 +20,7 @@ html {
 }
 
 .bg-gradient-blue {
-  background: linear-gradient(45deg, #0284c7 60%, #a3a1f7 100%);
+  background: linear-gradient(45deg, #0284c7 60%, #b3b3bf 100%);
 }
 
 .shadow-blue {
@@ -43,3 +43,7 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
+.radial-gradient-blue {
+  background: radial-gradient(circle at top right, #0285c7a7 40%, #00000000 85%);
+  background-size: contain;
+}
