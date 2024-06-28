@@ -1,8 +1,9 @@
 import Heading from "@/components/Heading";
 import ProjectCard from "@/components/ProjectCard";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function page() {
+
   const projects = [
     {
       title: "GDSC GHRCE Website",

@@ -5,7 +5,7 @@ export const links = [
     icon: 0,
   },
   {
-    href: "/resume#resume",
+    href: "/resume",
     label: "Resume",
     icon: 1,
   },

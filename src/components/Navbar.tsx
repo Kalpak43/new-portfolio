@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { GrHomeRounded } from "react-icons/gr";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { IoIosGitBranch } from "react-icons/io";
@@ -19,7 +19,19 @@ export default function Navbar() {
   ];
 
   const pathname = usePathname();
-  
+
+  useEffect(() => {
+    const halfViewportHeight = window.innerHeight * (3 / 4);
+    const viewportWidth = window.innerWidth;
+
+    if (viewportWidth < 990) {
+      window.scrollTo({
+        top: halfViewportHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [pathname]);
+
   return (
     <div className="rounded-xl bg-base-300 p-4 flex justify-center lg:justify-between items-center gap-4 fixed lg:static bottom-0 md:bottom-auto md:w-fit lg:w-full md:px-8 lg:px-4 md:top-0 left-0 right-0 md:left-auto mx-4 lg:mx-0 my-4 lg:my-0 z-50 shadow-blue lg:shadow-none">
       <h3 className="font-bold uppercase hidden lg:block">
@@ -33,7 +45,9 @@ export default function Navbar() {
               href={link.href}
               key={link.label}
               className={`btn btn-square ${
-                pathname === link.href.split("#")[0] ? "bg-gradient-blue" : "btn-accent"
+                pathname === link.href.split("#")[0]
+                  ? "bg-gradient-blue"
+                  : "btn-accent"
               }`}
             >
               <span className="text-center">{icons[link.icon]}</span>
