@@ -24,7 +24,7 @@ export default function Navbar() {
     const halfViewportHeight = window.innerHeight * (3 / 4);
     const viewportWidth = window.innerWidth;
 
-    if (viewportWidth < 990) {
+    if (viewportWidth < 990 && pathname !== "/") {
       window.scrollTo({
         top: halfViewportHeight,
         behavior: "smooth",
