@@ -42,7 +42,7 @@ export default function Carousel({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <div ref={ref} className="keen-slider h-full w-full">
+    <div ref={ref} className="keen-slider h-full w-full grayscale group-hover:grayscale-0 transition-all duration-1000">
       {children}
     </div>
   );

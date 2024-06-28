@@ -15,7 +15,7 @@ export default function VolunteeringCard({
   badge: string;
 }) {
   return (
-    <div className="rounded-xl border-2 border-accent p-4 space-y-2">
+    <div className="rounded-xl border-2 border-accent p-4 space-y-2 card transtion-all duration-200">
       <div className="flex items-center justify-between gap-x-4">
         <div>
           <p className="text-sm text-secondary">{duration}</p>
