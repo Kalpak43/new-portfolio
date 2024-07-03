@@ -3,7 +3,6 @@ import ProjectCard from "@/components/ProjectCard";
 import React, { useEffect } from "react";
 
 export default function page() {
-
   const projects = [
     {
       title: "GDSC GHRCE Website",
@@ -39,6 +38,13 @@ export default function page() {
       techStack: ["NextJs", "Tailwind", "MongoDB", "Typescript"],
       external: "https://auth-practice-app.vercel.app/",
       github: "https://github.com/Kalpak43/auth-practice-app",
+    },
+    {
+      title: "Node Auth API",
+      desc: "This is an authentication API made using NodeJs and MongoDB.",
+      techStack: ["Node", "Express", "MongoDB", "Docker"],
+      external: "",
+      github: "https://github.com/Kalpak43/Node-Auth",
     },
   ];
 
