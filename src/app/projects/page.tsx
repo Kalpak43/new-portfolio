@@ -37,8 +37,8 @@ export default function page() {
       title: "Auth Practice App",
       desc: "This a NextJs app made for practicing authentication.",
       techStack: ["NextJs", "Tailwind", "MongoDB", "Typescript"],
-      external: "https://project-sports-omega.vercel.app/",
-      github: "https://github.com/Kalpak43/Project-Sports",
+      external: "https://auth-practice-app.vercel.app/",
+      github: "https://github.com/Kalpak43/auth-practice-app",
     },
   ];
 

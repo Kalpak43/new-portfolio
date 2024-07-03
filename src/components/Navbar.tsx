@@ -10,7 +10,6 @@ import { links } from "@/constants/links";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
-  //  fixed left-0 right-0 bottom-0 m-4 z-50 lg:static
   const icons = [
     <GrHomeRounded size={20} className="mx-auto" key={0} />,
     <IoDocumentTextOutline size={20} className="mx-auto" key={1} />,
