@@ -6,18 +6,23 @@ html {
   scroll-behavior: smooth;
 }
 
-*::-webkit-scrollbar {
-  width: 1em;
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: #000;
+  opacity: 0.8;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #000 10px
+    ),
+    repeating-linear-gradient(#4f5a60, #191f22);
 }
 
-*::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-}
 
 .bg-gradient-blue {
   background: linear-gradient(45deg, #0284c7 60%, #b3b3bf 100%);
@@ -28,7 +33,7 @@ html {
   font-weight: bold;
 }
 
-h3 {
+h1 {
   font-size: 3rem;
   background: -webkit-linear-gradient(0deg, #1f262a 0%, #4e595e);
   background-clip: text;

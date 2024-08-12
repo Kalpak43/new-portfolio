@@ -7,9 +7,10 @@ export default function page() {
   return (
     <main className="py-6 lg:px-10 space-y-8">
       <div className="space-y-2">
-        <h2 className="text-3xl font-[600]">Hello, I&apos;m Kalpak Goshikwar!</h2>
+        <h2 className="text-3xl font-[600]">
+          Hello, I&apos;m Kalpak Goshikwar!
+        </h2>
         <p>
-          {" "}
           I hold a deep interest & knowledge in Programming, especially in
           designing software. I am currently a professional full-stack web
           developer and full-stack android developer. At the time, I work for
@@ -27,27 +28,27 @@ export default function page() {
             <FaCode size={40} className="text-info" />
             <h5 className="font-[600]">Web Apps</h5>
             <p className="text-sm text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero
-              suscipit exercitationem.At the time, I work for
-              different clients to create and enhance their products.
+              I specialize in creating dynamic and interactive web applications,
+              leveraging my expertise in modern web technologies to deliver
+              seamless user experiences.
             </p>
           </div>
           <div className="rounded-xl border-2 border-accent p-4 card transtion-all duration-200">
             <HiSquares2X2 size={40} className="text-info" />
             <h5 className="font-[600]">UI/UX Design</h5>
             <p className="text-sm text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero
-              suscipit exercitationem.At the time, I work for
-              different clients to create and enhance their products.
+              Proficient in utilizing a variety of UI/UX tools, I develop
+              interfaces that enhance user experience and engagement through
+              effective and innovative design solutions.
             </p>
           </div>
           <div className="rounded-xl border-2 border-accent p-4 card transtion-all duration-200">
             <LuComputer size={40} className="text-info" />
             <h5 className="font-[600]">Backend</h5>
             <p className="text-sm text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero
-              suscipit exercitationem.At the time, I work for
-              different clients to create and enhance their products.
+              I leverage a range of technologies to build robust and scalable
+              server-side solutions, ensuring optimal
+              performance of web applications.
             </p>
           </div>
         </div>

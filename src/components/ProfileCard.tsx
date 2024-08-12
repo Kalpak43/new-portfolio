@@ -8,13 +8,13 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function ProfileCard() {
   return (
-    <div className="rounded-xl bg-base-300 py-4 px-4 lg:px-10 group transition-all duration-1000">
+    <div  id="hero" className="rounded-xl bg-base-300 py-4 px-4 lg:px-10 group transition-all duration-1000 flex items-center justify-center relative z-10">
       <div className="text-center space-y-4 md:grid lg:block grid-cols-2 align-items-center gap-4">
         <div className="space-y-4">
           <div className=" max-w-[150px] mx-auto overflow-clip rounded-xl">
             <Image
               src="/Kalpak.webp"
-              alt="Profile"
+              alt="Hero Image"
               width={300}
               height={300}
               className="grayscale group-hover:grayscale-0 transition-all duration-1000 ease-in-out hover:scale-125"

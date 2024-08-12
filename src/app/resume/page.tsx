@@ -83,13 +83,13 @@ export default function page() {
               duration="Feb, 2023 - Present"
               title="Web Developer Intern"
               company="GBJ BUZZ Pvt. Ltd."
-              description="At the time, I work for different clients to create and enhance their products."
+              description="I contribute by building responsive and high-performance web applications."
             />
             <ExperienceCard
               duration="Sep, 2023 - Oct, 2023"
               title="Web Developer Intern"
               company="Alhansat Solutions"
-              description="At the time, I work for different clients to create and enhance their products."
+              description="Used svelte kit to develop the developer tools website module."
             />
           </div>
         </div>
@@ -135,14 +135,14 @@ export default function page() {
               duration="Aug, 2023 - Aug, 2024"
               role="Core Team Member"
               organization="GDSC GHRCE"
-              description="At the time, I work for different clients to create and enhance their products."
+              description="Here, I lead the web development team and developed different types of event websites."
               badge="/assets/images/volunteering/badge.webp"
             />
             <VolunteeringCard
               duration="June, 2023 - Aug, 2023"
               role="Web Developer"
               organization="IEEE CS GHRCE"
-              description="At the time, I work for different clients to create and enhance their products."
+              description="Developed the home page and event page during the tenure."
               badge="/assets/images/volunteering/ieee-logo.webp"
             />
           </div>

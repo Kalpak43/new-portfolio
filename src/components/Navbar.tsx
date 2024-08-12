@@ -33,11 +33,10 @@ export default function Navbar() {
 
   return (
     <div className="rounded-xl bg-base-300 p-4 flex justify-center lg:justify-between items-center gap-4 fixed lg:static bottom-0 md:bottom-auto md:w-fit lg:w-full md:px-8 lg:px-4 md:top-0 left-0 right-0 md:left-auto mx-4 lg:mx-0 my-4 lg:my-0 z-50 shadow-blue lg:shadow-none">
-      <h3 className="font-bold uppercase hidden lg:block">
+      <h1 className="font-bold uppercase hidden lg:block">
         {links.find((link) => link.href.split("#")[0] === pathname)?.label}
-      </h3>
+      </h1>
       <nav className="flex gap-4">
-        {" "}
         {links.map((link) => {
           return (
             <Link
