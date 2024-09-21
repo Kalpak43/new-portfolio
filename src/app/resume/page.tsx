@@ -80,7 +80,7 @@ export default function page() {
           <h4 className="text-2xl font-[600]">Experience</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 card-container">
             <ExperienceCard
-              duration="Feb, 2023 - Present"
+              duration="March, 2024 - Aug, 2024"
               title="Web Developer Intern"
               company="GBJ BUZZ Pvt. Ltd."
               description="I contribute by building responsive and high-performance web applications."
