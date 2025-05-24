@@ -19,7 +19,7 @@ export default function VolunteeringCard({
       <div className="flex items-center justify-between gap-x-4">
         <div>
           <p className="text-sm text-secondary">{duration}</p>
-          <h5 className="font-[600]">{role}</h5>
+          <h5 className="font-semibold">{role}</h5>
           <h6 className="text-sm">{organization}</h6>
         </div>
         <Image
@@ -27,7 +27,7 @@ export default function VolunteeringCard({
           width={300}
           height={300}
           alt="Core Team Badge"
-          className="rounded-full max-w-[4rem] aspect-square object-contain"
+          className="rounded-full max-w-16 aspect-square object-contain"
         />
       </div>
       <div>

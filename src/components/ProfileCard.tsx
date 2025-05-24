@@ -22,7 +22,7 @@ export default function ProfileCard() {
             />
           </div>
           <div className="space-y-2">
-            <h2 className="font-[500] text-2xl">Kalpak Goshikwar</h2>
+            <h2 className="font-medium text-2xl">Kalpak Goshikwar</h2>
             <div className="badge bg-gradient-blue p-4 badge-md rounded-lg">
               Web Developer
             </div>

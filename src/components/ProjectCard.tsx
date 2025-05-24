@@ -20,7 +20,7 @@ export default function ProjectCard({
   return (
     <div className="card overflow-hidden rounded-xl border-2 border-accent group p-4 space-y-2 flex flex-col justify-between transition-all duration-200">
       <div className="space-y-2">
-        <h5 className="font-[600]">{title}</h5>
+        <h5 className="font-semibold">{title}</h5>
         <p className="text-sm text-secondary">{desc}</p>
         <div className="flex gap-2 flex-wrap text-sm">
           {techStack.map((tech) => {

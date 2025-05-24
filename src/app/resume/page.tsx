@@ -77,7 +77,7 @@ export default function page() {
       <Heading title="Resume" />
       <div className="space-y-8">
         <div className="space-y-4">
-          <h4 className="text-2xl font-[600]">Experience</h4>
+          <h4 className="text-2xl font-semibold">Experience</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 card-container">
             <ExperienceCard
               duration="March, 2024 - Aug, 2024"
@@ -95,30 +95,30 @@ export default function page() {
         </div>
         <div className="space-y-4">
           <div className="flex gap-2 items-center">
-            <h4 className="text-2xl font-[600]">Skills</h4>
-            <div className="h-[1px] bg-gradient-blue flex-1"></div>
+            <h4 className="text-2xl font-semibold">Skills</h4>
+            <div className="h-px bg-gradient-blue flex-1"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
             <div className="space-y-2">
-              <h5 className="font-[600]">Programming Languages</h5>
+              <h5 className="font-semibold">Programming Languages</h5>
               {skills.programmingLanguages.map((language, index) => {
                 return <ProficienctLine {...language} key={index} />;
               })}
             </div>
             <div className="space-y-2">
-              <h5 className="font-[600]">Frontend</h5>
+              <h5 className="font-semibold">Frontend</h5>
               {skills.frontend.map((language, index) => {
                 return <ProficienctLine {...language} key={100 + index} />;
               })}
             </div>
             <div className="space-y-2">
-              <h5 className="font-[600]">Backend</h5>
+              <h5 className="font-semibold">Backend</h5>
               {skills.backend.map((language, index) => {
                 return <ProficienctLine {...language} key={200 + index} />;
               })}
             </div>
             <div className="space-y-2">
-              <h5 className="font-[600]">Tools</h5>
+              <h5 className="font-semibold">Tools</h5>
               {skills.tools.map((language, index) => {
                 return <ProficienctLine {...language} key={300 + index} />;
               })}
@@ -127,8 +127,8 @@ export default function page() {
         </div>
         <div className="space-y-4">
           <div className="flex gap-2 items-center">
-            <h4 className="text-2xl font-[600]">Volunteering</h4>
-            <div className="h-[1px] bg-gradient-blue flex-1"></div>
+            <h4 className="text-2xl font-semibold">Volunteering</h4>
+            <div className="h-px bg-gradient-blue flex-1"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 card-container">
             <VolunteeringCard

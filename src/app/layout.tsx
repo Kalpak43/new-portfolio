@@ -25,7 +25,7 @@ export default function RootLayout({
       <body
         className={
           poppins.className +
-          " px-4 md:px-10 lg:px-20 py-10 pb-28 md:pb-10 lg:grid grid-cols-1 lg:grid-cols-3 grid-row-1 gap-4 min-h-[100dvh] lg:h-[100dvh] bg-black "
+          " px-4 md:px-10 lg:px-20 py-10 pb-28 md:pb-10 lg:grid grid-cols-1 lg:grid-cols-3 grid-row-1 gap-4 min-h-dvh lg:h-dvh bg-black "
         }
       >
         <div className="bg"></div>
