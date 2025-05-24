@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import daisyui from "daisyui";
 import tailwindScrollbar from "tailwind-scrollbar";
 
 const config: Config = {
@@ -17,31 +16,31 @@ const config: Config = {
       },
     },
   },
-  plugins: [daisyui],
-  daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: "#AAA9AD",
+  // plugins: [daisyui],
+  // daisyui: {
+  //   themes: [
+  //     {
+  //       mytheme: {
+  //         primary: "#AAA9AD",
 
-          secondary: "#848689",
+  //         secondary: "#848689",
 
-          accent: "#5B676D",
+  //         accent: "#5B676D",
 
-          neutral: "#1f262a",
+  //         neutral: "#1f262a",
 
-          "base-100": "#1f262a",
+  //         "base-100": "#1f262a",
 
-          info: "#0284c7",
+  //         info: "#0284c7",
 
-          success: "#16a34a",
+  //         success: "#16a34a",
 
-          warning: "#facc15",
+  //         warning: "#facc15",
 
-          error: "#dc2626",
-        },
-      },
-    ],
-  },
+  //         error: "#dc2626",
+  //       },
+  //     },
+  //   ],
+  // },
 };
 export default config;
