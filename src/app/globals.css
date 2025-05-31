@@ -22,11 +22,8 @@
 } */
 
 @theme {
-  --background-container: radial-gradient(
-    circle at 0 0,
-    #4a526640 0%,
-    #ffffff0a
-  );
+  --color-primary-font: #111;
+  --color-base-font: #222;
   --shadow-container: var(--card-shadow);
 }
 
@@ -35,7 +32,6 @@
     background-position: 100% center;
   }
 }
-
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
