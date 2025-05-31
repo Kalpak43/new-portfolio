@@ -25,11 +25,11 @@ function Button({
 
   const variants = {
     primary:
-      "text-white shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)] bg-gradient-to-r from-[#000428] via-[#004e92] to-[#000428] bg-[length:200%_auto] hover:bg-[position:100%_center]",
+      "text-white shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)] bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] hover:bg-[position:100%_center]",
     secondary:
-      "text-[#004e92] border-2 border-[#004e92] bg-transparent hover:bg-[#004e92] hover:text-white shadow-[0px_0px_2px_rgba(0,78,146,0.3),0px_0px_6px_rgba(0,78,146,0.2)] hover:shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)]",
+      "text-secondary border-2 border-secondary bg-transparent hover:bg-secondary hover:text-white shadow-[0px_0px_2px_rgba(0,78,146,0.3),0px_0px_6px_rgba(0,78,146,0.2)] hover:shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)]",
     tertiary:
-      "text-[#004e92] bg-transparent hover:bg-[#004e92]/10 transition-colors duration-200 hover:shadow-none",
+      "text-secondary bg-transparent hover:bg-secondary/10 transition-colors duration-200 hover:shadow-none",
   };
 
   return (

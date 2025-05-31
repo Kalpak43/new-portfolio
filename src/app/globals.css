@@ -22,8 +22,12 @@
 } */
 
 @theme {
+  --color-primary: #000428;
+  --color-secondary: #004e92;
+
   --color-primary-font: #111;
   --color-base-font: #222;
+
   --shadow-container: var(--card-shadow);
 }
 

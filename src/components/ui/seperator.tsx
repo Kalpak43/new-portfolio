@@ -4,7 +4,7 @@ function Separator({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "mb-4 w-full h-px bg-gradient-to-r from-[#000428] to-[#0487fa] rounded-full",
+        "mb-4 w-full h-px bg-gradient-to-r from-primary to-secondary rounded-full",
         className
       )}
     />
