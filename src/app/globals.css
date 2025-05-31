@@ -22,6 +22,12 @@
 } */
 
 @theme {
+  --background-container: radial-gradient(
+    circle at 0 0,
+    #4a526640 0%,
+    #ffffff0a
+  );
+  --shadow-container: var(--card-shadow);
 }
 
 @layer utilities {
