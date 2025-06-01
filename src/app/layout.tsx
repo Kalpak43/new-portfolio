@@ -2,12 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ProfileCard from "@/components/ProfileCard";
 import Navbar from "@/components/Navbar";
-import { Poppins } from "next/font/google";
+import { IBM_Plex_Mono, Poppins } from "next/font/google";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
+  variable: "--font-poppins",
+});
+
+const IBMMono = IBM_Plex_Mono({
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-ibm-mono",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} text-base-font`}>{children}</body>
+      <body
+        className={`${poppins.className} ${IBMMono.variable} text-base-font`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

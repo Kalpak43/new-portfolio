@@ -9,6 +9,7 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 import { TbUserSquare } from "react-icons/tb";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import useRouterHash from "@/hooks/useRouterHash";
+import { cn } from "@/lib/utils";
 
 const links = [
   {
@@ -48,7 +49,7 @@ export default function Navbar() {
             key={link.name}
             size="icon"
             variant="tertiary"
-            className={hash === link.link ? "text-secondary" : "text-gray-600"}
+            className={cn("text-xl",hash === link.link ? "text-secondary" : "text-gray-600")}
             asChild
           >
             <Link href={link.link}>{link.icon}</Link>
