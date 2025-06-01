@@ -5,6 +5,30 @@ import Image from "next/image";
 import { SiLeetcode } from "react-icons/si";
 import Seperator from "../../ui/seperator";
 import Container from "@/components/ui/container";
+import Link from "next/link";
+
+const socialLinks = [
+  {
+    title: "Github",
+    icon: <FaGithub />,
+    url: "/",
+  },
+  {
+    title: "Leetcode",
+    icon: <SiLeetcode />,
+    url: "/",
+  },
+  {
+    title: "X (Twitter)",
+    icon: <FaXTwitter />,
+    url: "/",
+  },
+  {
+    title: "Linkedin",
+    icon: <FaLinkedin />,
+    url: "/",
+  },
+];
 
 function IntroCard() {
   return (
@@ -29,25 +53,22 @@ function IntroCard() {
           I am a web developer & I hold a deep interest in turning ideas into
           reality.
         </p>
-        <Button>
-          <FaDownload /> My Resume
+        <Button asChild>
+          <Link href={"/"}>
+            <FaDownload /> My Resume
+          </Link>
         </Button>
       </div>
       <Seperator />
 
-      <div className="flex gap-2 items-center justify-end">
-        <Button size="icon" variant="secondary">
-          <FaGithub />
-        </Button>
-        <Button size="icon" variant="secondary">
-          <SiLeetcode />
-        </Button>
-        <Button size="icon" variant="secondary">
-          <FaXTwitter />
-        </Button>
-        <Button size="icon" variant="secondary">
-          <FaLinkedin />
-        </Button>
+      <div className="flex gap-4 items-center justify-end">
+        {socialLinks.map((link) => (
+          <Button key={link.title} size="icon" variant="secondary" asChild>
+            <Link href={link.url} title={link.title}>
+              {link.icon}
+            </Link>
+          </Button>
+        ))}
       </div>
     </Container>
   );
