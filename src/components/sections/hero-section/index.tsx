@@ -13,9 +13,9 @@ function Hero() {
     <section className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-8">
       <IntroCard />
       <Skills />
-      <div className="md:col-span-3 flex flex-col gap-8">
+      <div className="md:col-span-3 flex flex-col gap-8 max-md:order-2 max-md:hidden">
         <Navbar />
-        <Container className="flex-1 p-[1px] overflow-hidden">
+        <Container className="flex-1 p-0 md:p-0 overflow-hidden">
           <div className="w-full h-full">
             <Image
               src={"/anime-city.webp"}
@@ -28,7 +28,7 @@ function Hero() {
         </Container>
       </div>
 
-      <Container className="md:col-span-4 flex items-center justify-center min-h-[100px]">
+      <Container className="md:col-span-4 flex items-center justify-center min-h-[100px] max-md:order-1">
         <h4 className="text-4xl sm:text-5xl md:text-6xl text-center font-[500] font-ibm-mono text-secondary">
           <Typewriter
             texts={["FRONTEND", "BACKEND", "DEVOPS", "CLOUD", "DATABASE"]}
@@ -40,7 +40,7 @@ function Hero() {
         </h4>
       </Container>
 
-      <Container className="md:col-span-8">
+      <Container className="md:col-span-8 max-md:order-3">
         <div className="space-y-4">
           <div className="space-y-2">
             <h2 className="text-4xl font-[500] text-primary-font">

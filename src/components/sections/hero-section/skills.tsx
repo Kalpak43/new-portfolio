@@ -101,7 +101,7 @@ const skills = [
 
 function Skills() {
   return (
-    <Container className="md:col-span-4 max-md:px-1">
+    <Container className="md:col-span-4 max-md:px-1 max-md:order-2">
       <div className="h-full w-full flex items-center justify-center flex-wrap gap-x-2 md:gap-x-4 gap-y-2">
         {skills.map((skill, index) => (
           <div
