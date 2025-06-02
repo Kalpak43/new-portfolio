@@ -12,7 +12,7 @@ import { FaLinkedin } from "react-icons/fa6";
 
 export default function Page() {
   return (
-    <main className="min-h-screen relative bg-transparent py-10 px-8 md:px-20 space-y-8">
+    <main className="min-h-screen relative bg-transparent py-10 px-4 md:px-20 space-y-8">
       <Background />
       <Hero />
       <Projects />
