@@ -1,4 +1,5 @@
 "use client";
+import Blogs from "@/components/sections/blog-section";
 import Hero from "@/components/sections/hero-section";
 import Projects from "@/components/sections/project-section";
 import Background from "@/components/ui/background";
@@ -14,6 +15,7 @@ export default function Page() {
       <Background />
       <Hero />
       <Projects />
+      <Blogs />
     </main>
   );
 }
