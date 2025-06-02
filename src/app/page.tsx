@@ -1,4 +1,5 @@
 "use client";
+import About from "@/components/sections/about-section";
 import Blogs from "@/components/sections/blog-section";
 import Hero from "@/components/sections/hero-section";
 import Projects from "@/components/sections/project-section";
@@ -16,6 +17,7 @@ export default function Page() {
       <Hero />
       <Projects />
       <Blogs />
+      <About />
     </main>
   );
 }
