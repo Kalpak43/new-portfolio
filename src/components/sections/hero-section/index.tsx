@@ -43,21 +43,21 @@ function Hero() {
       <Container className="md:col-span-8">
         <div className="space-y-4">
           <div className="space-y-2">
-            <h4 className="text-4xl font-[500] text-primary-font">
+            <h2 className="text-4xl font-[500] text-primary-font">
               Contact me
-            </h4>
+            </h2>
             <p>
               Get in touch with me for collaborations, opportunities, or just to
               say hello!
             </p>
           </div>
-          <div className="text-right">
-            <Button variant="primary">kalpakgoshikwar123@gmail.com</Button>
+          <div className="md:text-right">
+            <Button variant="primary" className="text-sm">
+              kalpakgoshikwar123@gmail.com
+            </Button>
           </div>
         </div>
       </Container>
-
-      <div className="md:col-span-12 flex gap-x-8 gap-y-8"></div>
     </section>
   );
 }

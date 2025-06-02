@@ -1,5 +1,6 @@
 "use client";
 import Hero from "@/components/sections/hero-section";
+import Projects from "@/components/sections/project-section";
 import Background from "@/components/ui/background";
 import Button from "@/components/ui/button";
 import Container from "@/components/ui/container";
@@ -12,6 +13,7 @@ export default function Page() {
     <main className="min-h-screen relative bg-transparent py-10 px-8 md:px-20 space-y-8">
       <Background />
       <Hero />
+      <Projects />
     </main>
   );
 }
