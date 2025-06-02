@@ -34,7 +34,7 @@ function About() {
           <div className="px-2">
             <Timeline>
               {experiences.map((exp) => (
-                <TimelineItem>
+                <TimelineItem key={exp.duration}>
                   <div className="w-full space-y-2 rounded-xl hover:shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)] border border-secondary/0 hover:border-secondary/40 hover:bg-primary/10 group transition-all duration-500">
                     <div className="px-2 py-4 space-y-1 w-full">
                       <div className=" flex max-md:flex-col md:items-center justify-between gap-1 w-full">
@@ -58,7 +58,9 @@ function About() {
       <Container className="md:col-span-6">
         <div className="space-y-8">
           <div className="space-y-2">
-            <h2 className="text-4xl font-[500] text-primary-font">Education</h2>
+            <h2 className="text-4xl font-[500] text-primary-font">
+              Volunteering
+            </h2>
           </div>
         </div>
       </Container>
