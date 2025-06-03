@@ -7,9 +7,10 @@ import Button from "./ui/button";
 import { FaCode, FaHouse } from "react-icons/fa6";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { TbUserSquare } from "react-icons/tb";
-import { useParams, usePathname, useRouter } from "next/navigation";
 import useRouterHash from "@/hooks/useRouterHash";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import { blurFadeIn } from "@/lib/variants";
 
 const links = [
   {
@@ -43,19 +44,34 @@ export default function Navbar() {
 
   return (
     <Container className="">
-      <nav className="flex items-center justify-between gap-4">
+      <motion.nav
+        className="flex items-center justify-between gap-4"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.01, // adjust for faster/slower stagger
+            },
+          },
+        }}
+      >
         {links.map((link) => (
-          <Button
-            key={link.name}
-            size="icon"
-            variant="tertiary"
-            className={cn("text-xl",hash === link.link ? "text-secondary" : "text-gray-600")}
-            asChild
-          >
-            <Link href={link.link}>{link.icon}</Link>
-          </Button>
+          <motion.div key={link.name} variants={blurFadeIn}>
+            <Button
+              size="icon"
+              variant="tertiary"
+              className={cn(
+                "text-xl",
+                hash === link.link ? "text-secondary" : "text-gray-600"
+              )}
+              asChild
+            >
+              <Link href={link.link}>{link.icon}</Link>
+            </Button>
+          </motion.div>
         ))}
-      </nav>
+      </motion.nav>
     </Container>
   );
 }

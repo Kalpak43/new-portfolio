@@ -1,9 +1,9 @@
 import ProjectCard from "@/components/project-card";
 import Button from "@/components/ui/button";
 import Container from "@/components/ui/container";
-import Separator from "@/components/ui/seperator";
-import Image from "next/image";
 import React from "react";
+import { motion } from "motion/react";
+import { blurFadeIn } from "@/lib/variants";
 
 function Projects() {
   return (
@@ -11,20 +11,46 @@ function Projects() {
       <Container className="col-span-full space-y-8">
         <div className="space-y-8">
           <div className="space-y-2">
-            <h2 className="text-4xl font-[500] text-primary-font">Projects</h2>
+            <motion.h2
+              variants={blurFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              className="text-4xl font-[500] text-primary-font"
+            >
+              Projects
+            </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.01, // adjust for faster/slower stagger
+                },
+              },
+            }}
+          >
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
-          </div>
+          </motion.div>
         </div>
-        <div className="text-center md:text-right">
+        <motion.div
+          className="text-center md:text-right"
+          variants={blurFadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <Button variant="secondary" className="">
             More Projects
           </Button>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

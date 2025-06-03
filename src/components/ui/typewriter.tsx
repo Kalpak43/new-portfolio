@@ -84,6 +84,7 @@ function Typewriter({
             animate={{ opacity: [0, 1, 0] }}
             transition={{
               duration: 1,
+              delay: 0.5,
               repeat: Number.POSITIVE_INFINITY,
               ease: "easeInOut",
             }}

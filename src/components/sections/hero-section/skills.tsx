@@ -1,7 +1,9 @@
+import Badge from "@/components/ui/badge";
 import Container from "@/components/ui/container";
-import Marquee from "@/components/ui/marquee";
 import Image from "next/image";
 import React from "react";
+import { motion } from "motion/react";
+import { blurFadeIn } from "@/lib/variants";
 
 const skills = [
   {
@@ -102,25 +104,36 @@ const skills = [
 function Skills() {
   return (
     <Container className="md:col-span-4 max-md:px-1 max-md:order-2">
-      <div className="h-full w-full flex items-center justify-center flex-wrap gap-x-2 md:gap-x-4 gap-y-2">
+      <motion.div
+        className="h-full w-full flex items-center justify-center flex-wrap gap-x-2 md:gap-x-4 gap-y-2"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.01, // adjust for faster/slower stagger
+            },
+          },
+        }}
+      >
         {skills.map((skill, index) => (
-          <div
-            key={skill.name + index}
-            className="flex items-center space-x-2 px-4 py-1 border border-secondary/40 bg-primary/10 rounded-full text-xs md:text-sm text-gray-600 shadow-[0px_0px_1px_rgba(0,0,0,0.36),0px_0px_4px_rgba(44,44,44,0.21)]"
-          >
-            <span>
-              <Image
-                src={skill.logo}
-                alt={skill.name}
-                height={100}
-                width={100}
-                className="w-2 md:w-4"
-              />
-            </span>
-            <span>{skill.name}</span>
-          </div>
+          <motion.div key={skill.name} variants={blurFadeIn}>
+            <Badge>
+              <span>
+                <Image
+                  src={skill.logo}
+                  alt={skill.name}
+                  height={100}
+                  width={100}
+                  className="w-2 md:w-4"
+                />
+              </span>
+              <span>{skill.name}</span>
+            </Badge>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Container>
   );
 }

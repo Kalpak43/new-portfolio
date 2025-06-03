@@ -2,11 +2,12 @@ import React from "react";
 import Container from "../../ui/container";
 import IntroCard from "./intro-card";
 import Button from "@/components/ui/button";
-import { FaHouse } from "react-icons/fa6";
 import Image from "next/image";
 import Skills from "./skills";
 import Navbar from "@/components/Navbar";
 import Typewriter from "@/components/ui/typewriter";
+import { motion } from "motion/react";
+import { blurFadeIn } from "@/lib/variants";
 
 function Hero() {
   return (
@@ -16,7 +17,13 @@ function Hero() {
       <div className="md:col-span-3 flex flex-col gap-8 max-md:order-2 max-md:hidden">
         <Navbar />
         <Container className="flex-1 p-0 md:p-0 overflow-hidden">
-          <div className="w-full h-full">
+          <motion.div
+            className="w-full h-full"
+            variants={blurFadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <Image
               src={"/anime-city.webp"}
               alt="random image"
@@ -24,39 +31,70 @@ function Hero() {
               width={1000}
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </Container>
       </div>
 
       <Container className="md:col-span-4 flex items-center justify-center min-h-[100px] max-md:order-1">
-        <h4 className="text-4xl sm:text-5xl md:text-6xl text-center font-[500] font-ibm-mono text-secondary">
+        <motion.h4
+          variants={blurFadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 1.2, staggerChildren: 0.5 }} // <-- Add delay here
+          className="text-4xl sm:text-5xl md:text-6xl text-center font-[500] font-ibm-mono text-secondary"
+        >
           <Typewriter
             texts={["FRONTEND", "BACKEND", "DEVOPS", "CLOUD", "DATABASE"]}
           />
-          {/* FRONTEND */}
-          {/* BACKEND */}
-          {/* DEVOPS */}
-          {/* CLOUD */}
-        </h4>
+        </motion.h4>
       </Container>
 
       <Container className="md:col-span-8 max-md:order-3">
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <h2 className="text-4xl font-[500] text-primary-font">
+        <motion.div
+          className="space-y-4"
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.05, // control delay between each child
+              },
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+        >
+          <motion.div className="space-y-2">
+            <motion.h2
+              className="text-4xl font-[500] text-primary-font"
+              variants={blurFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+            >
               Contact me
-            </h2>
-            <p>
+            </motion.h2>
+            <motion.p
+              variants={blurFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+            >
               Get in touch with me for collaborations, opportunities, or just to
               say hello!
-            </p>
-          </div>
-          <div className="md:text-right">
+            </motion.p>
+          </motion.div>
+          <motion.div
+            className="md:text-right"
+            variants={blurFadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <Button variant="primary" className="text-sm">
               kalpakgoshikwar123@gmail.com
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );

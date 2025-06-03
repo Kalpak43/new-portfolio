@@ -1,8 +1,9 @@
 import Container from "@/components/ui/container";
 import { Timeline, TimelineItem } from "@/components/ui/timeline";
 import React from "react";
-import { FaCalendarTimes } from "react-icons/fa";
 import { FaRegCalendar } from "react-icons/fa6";
+import { motion, Variant, Variants } from "motion/react";
+import { blurFadeIn } from "@/lib/variants";
 
 const experiences = [
   {
@@ -43,9 +44,15 @@ function About() {
       <Container className="md:col-span-6">
         <div className="space-y-8">
           <div className="space-y-2">
-            <h2 className="text-4xl font-[500] text-primary-font">
+            <motion.h2
+              variants={blurFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              className="text-4xl font-[500] text-primary-font"
+            >
               Experience
-            </h2>
+            </motion.h2>
           </div>
           <div className="px-2">
             <Timeline>
@@ -74,9 +81,15 @@ function About() {
       <Container className="md:col-span-6">
         <div className="space-y-8">
           <div className="space-y-2">
-            <h2 className="text-4xl font-[500] text-primary-font">
+            <motion.h2
+              variants={blurFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              className="text-4xl font-[500] text-primary-font"
+            >
               Volunteering
-            </h2>
+            </motion.h2>
           </div>
           <div className="px-2">
             <Timeline>
