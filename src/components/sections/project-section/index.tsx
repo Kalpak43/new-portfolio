@@ -21,8 +21,8 @@ const projects = [
     title: "AI trip planner",
     description: `This projects helps you in planning your trips to different places. The project suggests you areas to travel and places to stay. It integrates Gemini and variou Google Maps API features to give you the best itinerary for your trip.`,
     thumbnail: "/assets/images/projects/project-2.webp",
-    github: "https://github.com/Kalpak43/chatbot",
-    deploy: "https://chatbot-two-gules.vercel.app/",
+    github: "https://github.com/Kalpak43/AI_TRIP_PLANNER",
+    deploy: "https://ai-trip-planner-eight-ebon.vercel.app/",
   },
   {
     title: "Sports Connect",
