@@ -68,7 +68,7 @@ export default function Navbar() {
               )}
               asChild
             >
-              <Link href={link.link}>{link.icon}</Link>
+              <a href={link.link}>{link.icon}</a>
             </Button>
           </motion.div>
         ))}

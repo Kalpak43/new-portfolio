@@ -15,7 +15,7 @@ function Hero() {
     <section className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-8">
       <IntroCard />
       <Skills />
-      <div className="md:col-span-3 flex flex-col gap-8 max-md:order-2 max-md:hidden">
+      <div className="md:col-span-5 lg:col-span-4 xl:col-span-3 flex flex-col gap-8 max-md:order-2 max-md:hidden">
         <Navbar />
         <Container className="flex-1 p-0 md:p-0 overflow-hidden">
           <motion.div
@@ -36,7 +36,7 @@ function Hero() {
         </Container>
       </div>
 
-      <Container className="md:col-span-4 flex items-center justify-center min-h-[100px] max-md:order-1">
+      <Container className="md:col-span-12 lg:col-span-5 xl:col-span-4 flex items-center justify-center min-h-[100px] max-md:order-1 max-xl:order-4">
         <motion.h4
           variants={blurFadeIn}
           initial="hidden"
@@ -51,7 +51,7 @@ function Hero() {
         </motion.h4>
       </Container>
 
-      <Container className="md:col-span-8 max-md:order-3">
+      <Container className="md:col-span-12 lg:col-span-7 xl:col-span-8 max-md:order-3 max-xl:order-4">
         <motion.div
           className="space-y-4"
           variants={{

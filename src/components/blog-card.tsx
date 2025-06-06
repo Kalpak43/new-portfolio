@@ -89,13 +89,7 @@ function BlogCard({ title, description, thumbnail, publishDate, link }: Blog) {
         >
           {title}
         </motion.h4>
-        <motion.p
-          className="text-justify line-clamp-3 text-xs text-gray-600 leading-relaxed flex items-center"
-          variants={blurFadeIn}
-        >
-          <FaRegCalendar className="inline mr-2" />
-          {publishDate}
-        </motion.p>
+
         <motion.p
           className="text-justify line-clamp-3 text-sm leading-relaxed"
           variants={blurFadeIn}
@@ -105,8 +99,15 @@ function BlogCard({ title, description, thumbnail, publishDate, link }: Blog) {
 
         <motion.div
           variants={blurFadeIn}
-          className="flex items-center justify-end gap-2"
+          className="flex items-center justify-between gap-2"
         >
+          <motion.p
+            className="text-justify line-clamp-3 text-xs text-gray-600 leading-relaxed flex items-center"
+            variants={blurFadeIn}
+          >
+            <FaRegCalendar className="inline mr-2" />
+            {publishDate}
+          </motion.p>
           <Button size="icon" variant="tertiary" className="text-lg" asChild>
             <Link href={link} target="_blank">
               <FaLink />
