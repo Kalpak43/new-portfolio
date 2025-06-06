@@ -4,10 +4,41 @@ import Container from "@/components/ui/container";
 import React from "react";
 import { motion } from "motion/react";
 import { blurFadeIn } from "@/lib/variants";
+import Link from "next/link";
+
+const projects = [
+  {
+    title: "J.A.C.A. - Just Another Chat Application",
+    description: `This is an AI chat application.This project leverages the MERN stack
+          for its web application framework, Langchain for orchestrating AI
+          workflows, and the Gemini API for advanced language understanding and
+          generation.`,
+    thumbnail: "/assets/images/projects/project.webp",
+    github: "https://github.com/Kalpak43/chatbot",
+    deploy: "https://chatbot-two-gules.vercel.app/",
+  },
+  {
+    title: "AI trip planner",
+    description: `This projects helps you in planning your trips to different places. The project suggests you areas to travel and places to stay. It integrates Gemini and variou Google Maps API features to give you the best itinerary for your trip.`,
+    thumbnail: "/assets/images/projects/project-2.webp",
+    github: "https://github.com/Kalpak43/chatbot",
+    deploy: "https://chatbot-two-gules.vercel.app/",
+  },
+  {
+    title: "Sports Connect",
+    description: `A site which helps sports enthusiasts connect with each other. Uses Nextjs and firebase under the hood, with daisy UI for providing beautiful UI.`,
+    thumbnail: "/assets/images/projects/project-3.webp",
+    github: "https://github.com/Kalpak43/Sports-Site",
+    // deploy: "https://project-sports-omega.vercel.app/",
+  },
+];
 
 function Projects() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-8 space-y-8">
+    <section
+      id="projects"
+      className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-8 space-y-8"
+    >
       <Container className="col-span-full space-y-8">
         <div className="space-y-8">
           <div className="space-y-2">
@@ -35,9 +66,9 @@ function Projects() {
               },
             }}
           >
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
+            {projects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
           </motion.div>
         </div>
         <motion.div
@@ -47,8 +78,10 @@ function Projects() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          <Button variant="secondary" className="">
-            More Projects
+          <Button variant="secondary" className="" asChild>
+            <Link href={"https://github.com/Kalpak43"} target="_blank">
+              More Projects
+            </Link>
           </Button>
         </motion.div>
       </Container>

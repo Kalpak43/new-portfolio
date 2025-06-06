@@ -40,7 +40,7 @@ const volunteering = [
 
 function About() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-8">
+    <section id="about" className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-8">
       <Container className="md:col-span-6">
         <div className="space-y-8">
           <div className="space-y-2">

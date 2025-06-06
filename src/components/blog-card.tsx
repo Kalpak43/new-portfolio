@@ -1,30 +1,74 @@
 import Image from "next/image";
 import React from "react";
-import { FaRegCalendar } from "react-icons/fa6";
 import { motion } from "motion/react";
 import { blurFadeIn } from "@/lib/variants";
+import Button from "./ui/button";
+import { FaGithub, FaLink, FaRegCalendar } from "react-icons/fa6";
+import Link from "next/link";
 
-function BlogCard() {
+interface Blog {
+  title: string;
+  description: string;
+  publishDate: string;
+  thumbnail: string;
+  link: string;
+}
+
+const cardVariant = {
+  visible: {
+    y: 0,
+    transition: {
+      staggerChildren: 0.01, // adjust for faster/slower stagger
+    },
+  },
+  hover: {
+    y: -8,
+    transition: {
+      duration: 0.1,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+};
+
+const contentVariant = {
+  visible: {
+    transition: {
+      staggerChildren: 0.01, // adjust for faster/slower stagger
+    },
+  },
+  hover: {
+    // y: -4,
+    transition: {
+      duration: 0.1,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+};
+
+function BlogCard({ title, description, thumbnail, publishDate, link }: Blog) {
   return (
     <motion.div
-      className="space-y-2 rounded-xl hover:shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)] border border-secondary/0 hover:border-secondary/40 hover:bg-primary/10 group transition-all duration-500"
+      className="space-y-2 rounded-xl border border-secondary/0 group transition-all duration-500"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
-      variants={{
-        visible: {
-          transition: {
-            staggerChildren: 0.01, // adjust for faster/slower stagger
-          },
-        },
-      }}
+      variants={cardVariant}
+      whileHover="hover"
     >
       <motion.div
-        className="aspect-video rounded-xl overflow-hidden group-hover:rounded-b-none  transition-all duration-500 shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)]"
+        className="aspect-video rounded-xl overflow-hidden transition-all duration-500 shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)] relative"
         variants={blurFadeIn}
       >
-        <Image
-          src={"/assets/images/blogs/blog.webp"}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-primary/40 via-transparent to-secondary/40 opacity-0"
+          initial={{ opacity: 0 }}
+          whileHover={{
+            opacity: 1,
+            transition: { duration: 0.3 },
+          }}
+        />
+        <img
+          src={thumbnail}
           alt="Chatbot screenshot"
           height={1000}
           width={1000}
@@ -36,34 +80,39 @@ function BlogCard() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.01, // adjust for faster/slower stagger
-            },
-          },
-        }}
+        variants={contentVariant}
+        whileHover="hover"
       >
         <motion.h4
           className="font-[500] text-primary-font"
           variants={blurFadeIn}
         >
-          Mastering User Management in Linux
+          {title}
         </motion.h4>
-        <motion.p className="text-xs flex items-center" variants={blurFadeIn}>
+        <motion.p
+          className="text-justify line-clamp-3 text-xs text-gray-600 leading-relaxed flex items-center"
+          variants={blurFadeIn}
+        >
           <FaRegCalendar className="inline mr-2" />
-          Apr 22, 2025
+          {publishDate}
         </motion.p>
         <motion.p
           className="text-justify line-clamp-3 text-sm leading-relaxed"
           variants={blurFadeIn}
         >
-          Large Enterprises usually have multiple users performing different
-          actions on a single linux server. Ever wondered how that works? This
-          article will dive into the depths of user management via linux. By the
-          end you will be able to easily create users in any linux server and
-          hand someone their credentials.
+          {description}
         </motion.p>
+
+        <motion.div
+          variants={blurFadeIn}
+          className="flex items-center justify-end gap-2"
+        >
+          <Button size="icon" variant="tertiary" className="text-lg" asChild>
+            <Link href={link} target="_blank">
+              <FaLink />
+            </Link>
+          </Button>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

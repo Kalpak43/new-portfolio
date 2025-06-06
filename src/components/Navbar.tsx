@@ -23,15 +23,16 @@ const links = [
     icon: <FaCode />,
     link: "#projects",
   },
-  {
-    name: "About me",
-    icon: <TbUserSquare />,
-    link: "#about",
-  },
+
   {
     name: "Blogs",
     icon: <IoDocumentTextOutline />,
     link: "#blogs",
+  },
+  {
+    name: "About me",
+    icon: <TbUserSquare />,
+    link: "#about",
   },
 ];
 

@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Typewriter from "@/components/ui/typewriter";
 import { motion } from "motion/react";
 import { blurFadeIn } from "@/lib/variants";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -90,8 +91,10 @@ function Hero() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <Button variant="primary" className="text-sm">
-              kalpakgoshikwar123@gmail.com
+            <Button variant="primary" className="text-sm" asChild>
+              <Link href={"mailto:kalpakgoshikwar123@gmail.com"}>
+                kalpakgoshikwar123@gmail.com
+              </Link>
             </Button>
           </motion.div>
         </motion.div>

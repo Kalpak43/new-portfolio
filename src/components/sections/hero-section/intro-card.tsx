@@ -13,22 +13,22 @@ const socialLinks = [
   {
     title: "Github",
     icon: <FaGithub />,
-    url: "/",
+    url: "https://github.com/Kalpak43",
   },
   {
     title: "Leetcode",
     icon: <SiLeetcode />,
-    url: "/",
+    url: "https://leetcode.com/u/goshikwarkalpak/",
   },
   {
     title: "X (Twitter)",
     icon: <FaXTwitter />,
-    url: "/",
+    url: "https://x.com/kalpak935992463",
   },
   {
     title: "Linkedin",
     icon: <FaLinkedin />,
-    url: "/",
+    url: "https://www.linkedin.com/in/kalpakgoshikwar/",
   },
 ];
 
@@ -103,7 +103,7 @@ function IntroCard() {
           viewport={{ once: true, amount: 0.5 }}
         >
           <Button asChild>
-            <Link href={"/"}>
+            <Link href={"/Kalpak_Goshikwar_Resume.pdf"} target="_blank">
               <FaDownload /> My Resume
             </Link>
           </Button>
@@ -128,7 +128,7 @@ function IntroCard() {
         {socialLinks.map((link, index) => (
           <motion.div key={link.title} variants={blurFadeIn} custom={index}>
             <Button size="icon" variant="secondary" asChild>
-              <Link href={link.url} title={link.title}>
+              <Link href={link.url} title={link.title} target="_blank">
                 {link.icon}
               </Link>
             </Button>
