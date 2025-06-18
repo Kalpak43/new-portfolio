@@ -54,7 +54,7 @@ function CoreSkills() {
               "p-6 aspect-square w-full max-w-[120px] rounded-full border border-secondary/40 bg-primary/10 shadow-[0px_0px_2px_rgba(0,0,0,0.36),0px_0px_6px_rgba(44,44,44,0.21)] backdrop-blur-md",
               "-mr-10",
               i != coreSkills.length - 1 &&
-                "hover:z-20 hover:mr-0 transition-all duration-300"
+                " hover:mr-0 transition-all duration-300"
             )}
           >
             <Image
