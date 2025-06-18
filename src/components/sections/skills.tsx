@@ -34,7 +34,6 @@ const skills = [
     name: "Tailwindcss",
     logo: "/assets/icons/tailwindcss.svg",
   },
-
   {
     name: "Redux Toolkit",
     logo: "/assets/icons/redux.svg",
@@ -103,38 +102,56 @@ const skills = [
 
 function Skills() {
   return (
-    <Container className="md:col-span-12 xl:col-span-4 max-md:px-1 max-md:order-2 max-xl:order-3">
-      <motion.div
-        className="h-full w-full flex items-center justify-center flex-wrap gap-x-2 md:gap-x-4 gap-y-2"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.01, // adjust for faster/slower stagger
-            },
-          },
-        }}
-      >
-        {skills.map((skill, index) => (
-          <motion.div key={skill.name} variants={blurFadeIn}>
-            <Badge>
-              <span>
-                <Image
-                  src={skill.logo}
-                  alt={skill.name}
-                  height={100}
-                  width={100}
-                  className="w-2 md:w-4"
-                />
-              </span>
-              <span>{skill.name}</span>
-            </Badge>
+    <section
+      id="skills"
+      className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-8 space-y-8"
+    >
+      <Container className="col-span-full">
+        <div className="space-y-8">
+          <div className="space-y-2">
+            <motion.h2
+              variants={blurFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              className="text-4xl font-[500] text-primary-font"
+            >
+              Skills
+            </motion.h2>
+          </div>
+          <motion.div
+            className="h-full w-full flex items-center justify-start flex-wrap gap-x-2 md:gap-x-4 gap-y-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.01, // adjust for faster/slower stagger
+                },
+              },
+            }}
+          >
+            {skills.map((skill, index) => (
+              <motion.div key={skill.name} variants={blurFadeIn}>
+                <Badge>
+                  <span>
+                    <Image
+                      src={skill.logo}
+                      alt={skill.name}
+                      height={100}
+                      width={100}
+                      className="w-2 md:w-4"
+                    />
+                  </span>
+                  <span>{skill.name}</span>
+                </Badge>
+              </motion.div>
+            ))}
           </motion.div>
-        ))}
-      </motion.div>
-    </Container>
+        </div>
+      </Container>
+    </section>
   );
 }
 

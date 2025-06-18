@@ -23,6 +23,11 @@ const links = [
     icon: <FaCode />,
     link: "#projects",
   },
+  {
+    name: "Skills",
+    icon: <FaCode />,
+    link: "#skills",
+  },
 
   {
     name: "Blogs",
@@ -30,7 +35,7 @@ const links = [
     link: "#blogs",
   },
   {
-    name: "About me",
+    name: "Experience",
     icon: <TbUserSquare />,
     link: "#about",
   },
@@ -39,14 +44,10 @@ const links = [
 export default function Navbar() {
   const { hash } = useRouterHash();
 
-  useEffect(() => {
-    console.log(hash);
-  }, [hash]);
-
   return (
-    <Container className="">
+    <Container className="md:px-2">
       <motion.nav
-        className="flex items-center justify-between gap-4"
+        className="flex items-center justify-between"
         initial="hidden"
         animate="visible"
         variants={{
@@ -60,15 +61,17 @@ export default function Navbar() {
         {links.map((link) => (
           <motion.div key={link.name} variants={blurFadeIn}>
             <Button
-              size="icon"
+              size="md"
               variant="tertiary"
               className={cn(
-                "text-xl",
+                "text-sm",
                 hash === link.link ? "text-secondary" : "text-gray-600"
               )}
               asChild
             >
-              <a href={link.link}>{link.icon}</a>
+              <a href={link.link}>
+                {link.icon} {link.name}
+              </a>
             </Button>
           </motion.div>
         ))}

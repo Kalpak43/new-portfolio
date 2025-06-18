@@ -2,38 +2,21 @@ import React from "react";
 import Container from "../../ui/container";
 import IntroCard from "./intro-card";
 import Button from "@/components/ui/button";
-import Image from "next/image";
-import Skills from "./skills";
 import Navbar from "@/components/Navbar";
 import Typewriter from "@/components/ui/typewriter";
 import { motion } from "motion/react";
 import { blurFadeIn } from "@/lib/variants";
 import Link from "next/link";
+import CoreSkills from "./core-skills";
 
 function Hero() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-8">
       <IntroCard />
-      <Skills />
-      <div className="md:col-span-5 lg:col-span-4 xl:col-span-3 flex flex-col gap-8 max-md:order-2 max-md:hidden">
+      {/* <Skills /> */}
+      <div className="md:col-span-12 lg:col-span-6 xl:col-span-6 flex flex-col gap-8 max-md:order-2 max-md:hidden">
         <Navbar />
-        <Container className="flex-1 p-0 md:p-0 overflow-hidden">
-          <motion.div
-            className="w-full h-full"
-            variants={blurFadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            <Image
-              src={"/anime-city.webp"}
-              alt="random image"
-              height={1000}
-              width={1000}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        </Container>
+        <CoreSkills />
       </div>
 
       <Container className="md:col-span-12 lg:col-span-5 xl:col-span-4 flex items-center justify-center min-h-[100px] max-md:order-1 max-xl:order-4">
