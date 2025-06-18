@@ -1,20 +1,19 @@
 "use client";
-
-import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 import Container from "./ui/container";
 import Button from "./ui/button";
-import { FaCode, FaHouse } from "react-icons/fa6";
+import { FaCode, FaHouse, FaList } from "react-icons/fa6";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { TbUserSquare } from "react-icons/tb";
 import useRouterHash from "@/hooks/useRouterHash";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { blurFadeIn } from "@/lib/variants";
+import useMediaQuery from "@/hooks/use-media-query";
 
 const links = [
   {
-    name: "Home",
+    name: "About",
     icon: <FaHouse />,
     link: "",
   },
@@ -25,7 +24,7 @@ const links = [
   },
   {
     name: "Skills",
-    icon: <FaCode />,
+    icon: <FaList />,
     link: "#skills",
   },
 
@@ -43,9 +42,10 @@ const links = [
 
 export default function Navbar() {
   const { hash } = useRouterHash();
+  const isNotXl = useMediaQuery("(max-width: 1024px)");
 
   return (
-    <Container className="md:px-2">
+    <Container className="xl:px-2  max-md:hidden">
       <motion.nav
         className="flex items-center justify-between"
         initial="hidden"
@@ -61,7 +61,7 @@ export default function Navbar() {
         {links.map((link) => (
           <motion.div key={link.name} variants={blurFadeIn}>
             <Button
-              size="md"
+              size={isNotXl ? "icon" : "md"}
               variant="tertiary"
               className={cn(
                 "text-sm",
@@ -70,7 +70,7 @@ export default function Navbar() {
               asChild
             >
               <a href={link.link}>
-                {link.icon} {link.name}
+                {link.icon} <span className="max-xl:hidden">{link.name}</span>
               </a>
             </Button>
           </motion.div>

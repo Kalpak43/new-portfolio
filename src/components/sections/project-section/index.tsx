@@ -16,6 +16,28 @@ const projects = [
     thumbnail: "/assets/images/projects/project.webp",
     github: "https://github.com/Kalpak43/chatbot",
     deploy: "https://chatbot-two-gules.vercel.app/",
+    tech: [
+      {
+        name: "React",
+        logo: "/assets/icons/react.svg",
+      },
+      {
+        name: "Redux Toolkit",
+        logo: "/assets/icons/redux.svg",
+      },
+      {
+        name: "Node.js",
+        logo: "/assets/icons/nodejs.svg",
+      },
+      {
+        name: "Mongo",
+        logo: "/assets/icons/mongodb.svg",
+      },
+      {
+        name: "Langchain",
+        logo: "/assets/icons/langchain.svg",
+      },
+    ],
   },
   {
     title: "AI trip planner",
@@ -23,6 +45,24 @@ const projects = [
     thumbnail: "/assets/images/projects/project-2.webp",
     github: "https://github.com/Kalpak43/AI_TRIP_PLANNER",
     deploy: "https://ai-trip-planner-eight-ebon.vercel.app/",
+    tech: [
+      {
+        name: "React",
+        logo: "/assets/icons/react.svg",
+      },
+      {
+        name: "Redux Toolkit",
+        logo: "/assets/icons/redux.svg",
+      },
+      {
+        name: "Node.js",
+        logo: "/assets/icons/nodejs.svg",
+      },
+      {
+        name: "Firebase",
+        logo: "/assets/icons/firebase.svg",
+      },
+    ],
   },
   {
     title: "Sports Connect",
@@ -30,6 +70,16 @@ const projects = [
     thumbnail: "/assets/images/projects/project-3.webp",
     github: "https://github.com/Kalpak43/Sports-Site",
     // deploy: "https://project-sports-omega.vercel.app/",
+    tech: [
+      {
+        name: "Next",
+        logo: "/assets/icons/nextjs.svg",
+      },
+      {
+        name: "Firebase",
+        logo: "/assets/icons/firebase.svg",
+      },
+    ],
   },
 ];
 

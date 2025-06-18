@@ -34,7 +34,7 @@ const socialLinks = [
 
 function IntroCard() {
   return (
-    <Container className="min-h-[400px] md:col-span-8 xl:col-span-6 space-y-8 flex flex-col justify-between">
+    <Container className="min-h-[400px] md:col-span-7 xl:col-span-6 space-y-8 flex flex-col justify-between">
       <motion.div
         variants={{
           visible: {

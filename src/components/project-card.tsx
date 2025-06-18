@@ -5,6 +5,7 @@ import { blurFadeIn } from "@/lib/variants";
 import Button from "./ui/button";
 import { FaGithub, FaLink } from "react-icons/fa6";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface Project {
   title: string;
@@ -12,6 +13,10 @@ interface Project {
   thumbnail: string;
   github: string;
   deploy?: string;
+  tech: {
+    name: string;
+    logo: string;
+  }[];
 }
 
 const cardVariant = {
@@ -51,6 +56,7 @@ function ProjectCard({
   thumbnail,
   github,
   deploy,
+  tech,
 }: Project) {
   return (
     <motion.div
@@ -103,21 +109,65 @@ function ProjectCard({
         </motion.p>
 
         <motion.div
-          variants={blurFadeIn}
-          className="flex items-center justify-end gap-2"
+          // variants={blurFadeIn}  
+          className="flex items-center justify-between gap-2"
         >
-          <Button size="icon" variant="tertiary" className="text-lg" asChild>
-            <Link href={github} target="_blank">
-              <FaGithub />
-            </Link>
-          </Button>
-          {deploy && (
+          <motion.div
+            className="flex items-center "
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.01, // adjust for faster/slower stagger
+                },
+              },
+            }}
+          >
+            {tech.map((skill, i) => (
+              <motion.div
+                key={skill.name}
+                variants={blurFadeIn}
+                className={cn(
+                  "p-1 aspect-square w-6 h-6 rounded-full border border-secondary/40 bg-primary/10 shadow-[0px_0px_1px_rgba(0,0,0,0.36),0px_0px_4px_rgba(44,44,44,0.21)] backdrop-blur-md",
+                  "-mr-2",
+                  i != tech.length - 1 &&
+                    " group-hover:mr-1 transition-all duration-300"
+                )}
+                style={{
+                  backdropFilter: "blur(20px)"
+                }}
+              >
+                <Image
+                  src={skill.logo}
+                  alt={skill.name}
+                  height={1000}
+                  width={1000}
+                  className="h-full w-full object-center object-contain"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+          <div>
             <Button size="icon" variant="tertiary" className="text-lg" asChild>
-              <Link href={deploy} target="_blank">
-                <FaLink />
+              <Link href={github} target="_blank">
+                <FaGithub />
               </Link>
             </Button>
-          )}
+            {deploy && (
+              <Button
+                size="icon"
+                variant="tertiary"
+                className="text-lg"
+                asChild
+              >
+                <Link href={deploy} target="_blank">
+                  <FaLink />
+                </Link>
+              </Button>
+            )}
+          </div>
         </motion.div>
       </motion.div>
     </motion.div>
