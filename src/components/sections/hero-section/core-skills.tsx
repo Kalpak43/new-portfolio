@@ -33,7 +33,7 @@ const coreSkills = [
 function CoreSkills() {
   return (
     <Container className="flex-1 overflow-hidden">
-      <div className="space-y-8 ">
+      <div className="space-y-8 flex flex-col h-full">
         <div className="space-y-2  max-md:hidden">
           <motion.h2
             variants={blurFadeIn}
@@ -46,7 +46,7 @@ function CoreSkills() {
           </motion.h2>
         </div>
         <motion.div
-          className="h-full w-full flex items-center justify-center gap-y-2"
+          className="h-full w-full flex-1 flex items-center justify-center gap-y-2 -ml-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
