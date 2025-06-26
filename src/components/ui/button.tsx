@@ -18,7 +18,7 @@ function Button({
   ...rest
 }: ButtonProps) {
   const base =
-    "inline-flex items-center gap-2 rounded-full text-center relative overflow-hidden transition-all duration-500";
+    "inline-flex items-center gap-2 rounded-full text-center relative overflow-hidden transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background";
 
   const sizes = {
     icon: "p-2 text-base",

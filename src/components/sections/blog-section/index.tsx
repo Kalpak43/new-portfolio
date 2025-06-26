@@ -1,10 +1,12 @@
 import BlogCard from "@/components/blog-card";
 import Button from "@/components/ui/button";
 import Container from "@/components/ui/container";
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "motion/react";
 import { blurFadeIn } from "@/lib/variants";
 import Link from "next/link";
+import Slider, { SliderItem, SliderRefType } from "@/components/ui/slider";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 const blogs = [
   {
@@ -34,6 +36,8 @@ const blogs = [
 ];
 
 function Blogs() {
+  const sliderRef = useRef<SliderRefType>(null);
+  const [activeSlide, setActiveSlide] = React.useState(0);
   return (
     <section
       id="blogs"
@@ -41,7 +45,7 @@ function Blogs() {
     >
       <Container className="col-span-full space-y-8">
         <div className="space-y-8">
-          <div className="space-y-2">
+          <div className="space-y-2 flex items-center justify-between">
             <motion.h2
               variants={blurFadeIn}
               initial="hidden"
@@ -51,25 +55,52 @@ function Blogs() {
             >
               Blogs
             </motion.h2>
+            <div className="flex gap-2">
+              <Button
+                variant="secondary"
+                size="icon"
+                className="w-full md:w-fit"
+                onClick={() => {
+                  if (sliderRef.current) {
+                    sliderRef.current.prev();
+                  }
+                }}
+                disabled={activeSlide === 0}
+              >
+                <FaChevronLeft />
+              </Button>
+
+              <Button
+                variant="secondary"
+                size="icon"
+                className="w-full md:w-fit"
+                onClick={() => {
+                  if (sliderRef.current) {
+                    sliderRef.current.next();
+                  }
+                }}
+                disabled={activeSlide === blogs.length - 1}
+              >
+                <FaChevronRight />
+              </Button>
+            </div>
           </div>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.01, // adjust for faster/slower stagger
-                },
-              },
-            }}
+          <Slider
+            ref={sliderRef}
+            onActiveSlideChange={setActiveSlide}
+            slides={{ base: 1, sm: 2, md: 2, xl: 3 }}
+            autoSlide
           >
-            {blogs.map((blog) => (
-              <BlogCard key={blog.title} {...blog} />
+            {blogs.map((project) => (
+              <SliderItem
+                key={project.title}
+                className="min-w-[300px] md:min-w-[350px]"
+              >
+                <BlogCard {...project} />
+              </SliderItem>
             ))}
-          </motion.div>
+          </Slider>
         </div>
 
         <motion.div

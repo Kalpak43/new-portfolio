@@ -61,7 +61,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding  : 3rem;
+  scroll-padding: 3rem;
 }
 
 .gradient-1 {
@@ -80,4 +80,16 @@ html {
   background-image: radial-gradient(circle at 0% 0%,
       var(--gradient-color-4),
       #4bffe700);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
 }
