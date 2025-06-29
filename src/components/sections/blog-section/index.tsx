@@ -86,21 +86,23 @@ function Blogs() {
             </div>
           </div>
 
-          <Slider
-            ref={sliderRef}
-            onActiveSlideChange={setActiveSlide}
-            slides={{ base: 1, sm: 2, md: 2, xl: 3 }}
-            autoSlide
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.01, // adjust for faster/slower stagger
+                },
+              },
+            }}
           >
-            {blogs.map((project) => (
-              <SliderItem
-                key={project.title}
-                className="min-w-[300px] md:min-w-[350px]"
-              >
-                <BlogCard {...project} />
-              </SliderItem>
+            {blogs.map((blog) => (
+              <BlogCard key={blog.title} {...blog} />
             ))}
-          </Slider>
+          </motion.div>
         </div>
 
         <motion.div

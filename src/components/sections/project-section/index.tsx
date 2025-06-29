@@ -83,6 +83,46 @@ const projects = [
       },
     ],
   },
+  {
+    title: "GDSC GHRCE Website",
+    description: `A landing page for GDSC GHRCE community. It showcases the events and the team at GDSC GHRCE. Made with react and tailwind.`,
+    thumbnail: "/assets/images/projects/gdsc1.png",
+    deploy: "https://gdscghrce.in/",
+    tech: [
+      {
+        name: "Next",
+        logo: "/assets/icons/react.svg",
+      },
+      {
+        name: "Tailwind",
+        logo: "/assets/icons/tailwindcss.svg",
+      },
+    ],
+  },
+  {
+    title: "HRMS Platform UI",
+    description: `A UI concept for HRMS platform. Built with React, Redux and shadcn UI. It shows UI for different types of modules in an HRMS platform.`,
+    thumbnail: "/assets/images/projects/hrms.webp",
+    deploy: "https://hr-clone.vercel.app/",
+    tech: [
+      {
+        name: "Next",
+        logo: "/assets/icons/react.svg",
+      },
+      {
+        name: "Redux",
+        logo: "/assets/icons/redux.svg",
+      },
+      {
+        name: "Tailwind",
+        logo: "/assets/icons/tailwindcss.svg",
+      },
+      {
+        name: "Supabase",
+        logo: "/assets/icons/supabase.svg",
+      },
+    ],
+  },
 ];
 
 function Projects() {
@@ -138,21 +178,25 @@ function Projects() {
             </div>
           </div>
 
-          <Slider
-            ref={sliderRef}
-            onActiveSlideChange={setActiveSlide}
-            slides={{ base: 1, sm: 2, md: 2, xl: 3 }}
-            autoSlide
+          <motion.div
+            variants={blurFadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
           >
-            {projects.map((project) => (
-              <SliderItem
-                key={project.title}
-                className="min-w-[300px] md:min-w-[350px]"
-              >
-                <ProjectCard {...project} />
-              </SliderItem>
-            ))}
-          </Slider>
+            <Slider
+              ref={sliderRef}
+              onActiveSlideChange={setActiveSlide}
+              slides={{ base: 1, sm: 2, md: 2, xl: 3 }}
+              autoSlide
+            >
+              {projects.map((project) => (
+                <SliderItem key={project.title} className="">
+                  <ProjectCard {...project} />
+                </SliderItem>
+              ))}
+            </Slider>
+          </motion.div>
         </div>
         <motion.div
           className="text-center md:text-right"

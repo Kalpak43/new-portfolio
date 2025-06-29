@@ -11,44 +11,13 @@ interface Project {
   title: string;
   description: string;
   thumbnail: string;
-  github: string;
+  github?: string;
   deploy?: string;
   tech: {
     name: string;
     logo: string;
   }[];
 }
-
-const cardVariant = {
-  visible: {
-    y: 0,
-    transition: {
-      staggerChildren: 0.01, // adjust for faster/slower stagger
-    },
-  },
-  hover: {
-    y: -8,
-    transition: {
-      duration: 0.1,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  },
-};
-
-const contentVariant = {
-  visible: {
-    transition: {
-      staggerChildren: 0.01, // adjust for faster/slower stagger
-    },
-  },
-  hover: {
-    // y: -4,
-    transition: {
-      duration: 0.1,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  },
-};
 
 function ProjectCard({
   title,
@@ -59,26 +28,9 @@ function ProjectCard({
   tech,
 }: Project) {
   return (
-    <motion.div
-      className="space-y-2 rounded-xl border border-secondary/0 group transition-all duration-500"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-      variants={cardVariant}
-      whileHover="hover"
-    >
-      <motion.div
-        className="aspect-video rounded-xl overflow-hidden transition-all duration-500 shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)] relative"
-        variants={blurFadeIn}
-      >
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-primary/40 via-transparent to-secondary/40 opacity-0"
-          initial={{ opacity: 0 }}
-          whileHover={{
-            opacity: 1,
-            transition: { duration: 0.3 },
-          }}
-        />
+    <div className="space-y-2 rounded-xl border border-secondary/0 group transition-all duration-500">
+      <div className="aspect-video rounded-xl overflow-hidden transition-all duration-500 shadow-[0px_0px_2px_rgba(0,0,0,0.56),0px_0px_6px_rgba(44,44,44,0.61)] relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-transparent to-secondary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <Image
           src={thumbnail}
           alt="Chatbot screenshot"
@@ -86,49 +38,18 @@ function ProjectCard({
           width={1000}
           className="h-full w-full object-cover"
         />
-      </motion.div>
-      <motion.div
-        className="px-2 py-2 space-y-1"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={contentVariant}
-        whileHover="hover"
-      >
-        <motion.h4
-          className="font-[500] text-primary-font"
-          variants={blurFadeIn}
-        >
-          {title}
-        </motion.h4>
-        <motion.p
-          className="text-justify line-clamp-3 text-sm leading-relaxed"
-          variants={blurFadeIn}
-        >
+      </div>
+      <div className="px-2 py-2 space-y-1">
+        <h4 className="font-[500] text-primary-font">{title}</h4>
+        <p className="text-justify line-clamp-3 text-sm leading-relaxed">
           {description}
-        </motion.p>
+        </p>
 
-        <motion.div
-          // variants={blurFadeIn}  
-          className="flex items-center justify-between gap-2"
-        >
-          <motion.div
-            className="flex items-center "
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.01, // adjust for faster/slower stagger
-                },
-              },
-            }}
-          >
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center">
             {tech.map((skill, i) => (
-              <motion.div
+              <div
                 key={skill.name}
-                variants={blurFadeIn}
                 className={cn(
                   "p-1 aspect-square w-6 h-6 rounded-full border border-secondary/40 bg-primary/10 shadow-[0px_0px_1px_rgba(0,0,0,0.36),0px_0px_4px_rgba(44,44,44,0.21)] backdrop-blur-md",
                   "-mr-2",
@@ -136,7 +57,7 @@ function ProjectCard({
                     " group-hover:mr-1 transition-all duration-300"
                 )}
                 style={{
-                  backdropFilter: "blur(20px)"
+                  backdropFilter: "blur(20px)",
                 }}
               >
                 <Image
@@ -146,15 +67,22 @@ function ProjectCard({
                   width={1000}
                   className="h-full w-full object-center object-contain"
                 />
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
           <div>
-            <Button size="icon" variant="tertiary" className="text-lg" asChild>
-              <Link href={github} target="_blank">
-                <FaGithub />
-              </Link>
-            </Button>
+            {github && (
+              <Button
+                size="icon"
+                variant="tertiary"
+                className="text-lg"
+                asChild
+              >
+                <Link href={github} target="_blank">
+                  <FaGithub />
+                </Link>
+              </Button>
+            )}
             {deploy && (
               <Button
                 size="icon"
@@ -168,9 +96,9 @@ function ProjectCard({
               </Button>
             )}
           </div>
-        </motion.div>
-      </motion.div>
-    </motion.div>
+        </div>
+      </div>
+    </div>
   );
 }
 

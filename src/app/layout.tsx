@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ProfileCard from "@/components/ProfileCard";
-import Navbar from "@/components/Navbar";
 import { IBM_Plex_Mono, Poppins } from "next/font/google";
 
 const poppins = Poppins({

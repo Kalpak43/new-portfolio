@@ -43,7 +43,7 @@ const Slider = forwardRef<
     const scrollBy = (direction: number) => {
       if (scrollContainer.current && itemWidth) {
         scrollContainer.current.scrollTo({
-          left: scrollContainer.current.scrollLeft + direction * itemWidth,
+          left: scrollContainer.current.scrollLeft + direction * (itemWidth),
           behavior: "smooth",
         });
       }
@@ -122,7 +122,7 @@ const Slider = forwardRef<
       <div
         ref={scrollContainer}
         className={cn(
-          "w-full overflow-x-scroll flex gap-8 p-4 hide-scrollbar snap-x snap-mandatory"
+          "w-full overflow-x-scroll flex gap-8 p-4 hide-scrollbar snap-x snap-mandatory scroll-px-4"
         )}
         style={{ height: "100%" }}
       >

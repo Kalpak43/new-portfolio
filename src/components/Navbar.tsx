@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Container from "./ui/container";
 import Button from "./ui/button";
@@ -63,7 +64,6 @@ export default function Navbar() {
 }
 
 export function MainNavbar() {
-  const { hash } = useRouterHash();
   const isNotXl = useMediaQuery("(max-width: 1024px)");
 
   return (
@@ -86,10 +86,7 @@ export function MainNavbar() {
               <Button
                 size={isNotXl ? "icon" : "md"}
                 variant="tertiary"
-                className={cn(
-                  "text-sm",
-                  hash === link.link ? "text-secondary" : "text-gray-600"
-                )}
+                className={"text-sm text-gray-600"}
                 asChild
               >
                 <a href={link.link}>
@@ -105,8 +102,6 @@ export function MainNavbar() {
 }
 
 export function CompactNavbar() {
-  const { hash } = useRouterHash();
-
   return (
     <motion.header
       layoutId="navbar"
@@ -130,10 +125,7 @@ export function CompactNavbar() {
               <Button
                 size="md"
                 variant="tertiary"
-                className={cn(
-                  "text-sm",
-                  hash === link.link ? "text-secondary" : "text-gray-600"
-                )}
+                className={"text-sm text-gray-600"}
                 asChild
               >
                 <a href={link.link}>{link.icon}</a>
