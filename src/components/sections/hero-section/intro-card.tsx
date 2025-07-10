@@ -103,7 +103,7 @@ function IntroCard() {
           viewport={{ once: true, amount: 0.5 }}
         >
           <Button asChild>
-            <Link href={"/Kalpak_Goshikwar_Resume.pdf"} target="_blank">
+            <Link href={"https://drive.google.com/file/d/1Wnym9xNttsyQMFXMCp71fZ0TT4x2G4Xa/view?usp=sharing"} target="_blank">
               <FaDownload /> My Resume
             </Link>
           </Button>
