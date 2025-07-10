@@ -146,7 +146,7 @@ function Skills() {
                 variants={{
                   visible: {
                     transition: {
-                      staggerChildren: 0.01, // adjust for faster/slower stagger
+                      staggerChildren: 0.3, // adjust for faster/slower stagger
                     },
                   },
                 }}
@@ -165,7 +165,7 @@ function Skills() {
                   variants={{
                     visible: {
                       transition: {
-                        staggerChildren: 0.01,
+                        staggerChildren: 0.05,
                       },
                     },
                   }}

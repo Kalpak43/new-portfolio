@@ -53,7 +53,7 @@ function CoreSkills() {
           variants={{
             visible: {
               transition: {
-                staggerChildren: 0.01, // adjust for faster/slower stagger
+                staggerChildren: 0.12, // adjust for faster/slower stagger
               },
             },
           }}

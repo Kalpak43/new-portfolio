@@ -84,7 +84,7 @@ function BlogCard({ title, description, thumbnail, publishDate, link }: Blog) {
         whileHover="hover"
       >
         <motion.h4
-          className="font-[500] text-primary-font"
+          className="font-[500] text-primary-font line-clamp-1"
           variants={blurFadeIn}
         >
           {title}

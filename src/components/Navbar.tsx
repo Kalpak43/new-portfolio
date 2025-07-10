@@ -76,7 +76,7 @@ export function MainNavbar() {
           variants={{
             visible: {
               transition: {
-                staggerChildren: 0.01, // adjust for faster/slower stagger
+                staggerChildren: 0.1, // adjust for faster/slower stagger
               },
             },
           }}
@@ -115,7 +115,7 @@ export function CompactNavbar() {
           variants={{
             visible: {
               transition: {
-                staggerChildren: 0.01, // adjust for faster/slower stagger
+                staggerChildren: 0.1, // adjust for faster/slower stagger
               },
             },
           }}

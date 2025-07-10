@@ -25,7 +25,7 @@ function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 1.2, staggerChildren: 0.5 }} // <-- Add delay here
+          transition={{ delay: 1.5, staggerChildren: 0.5 }} // <-- Add delay here
           className="text-4xl sm:text-5xl md:text-6xl text-center font-[500] font-ibm-mono text-secondary"
         >
           <Typewriter
@@ -40,7 +40,7 @@ function Hero() {
           variants={{
             visible: {
               transition: {
-                staggerChildren: 0.05, // control delay between each child
+                staggerChildren: 0.15, // control delay between each child
               },
             },
           }}

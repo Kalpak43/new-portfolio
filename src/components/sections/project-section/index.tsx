@@ -171,19 +171,14 @@ function Projects() {
                     sliderRef.current.next();
                   }
                 }}
-                disabled={activeSlide === projects.length - 1}
+                disabled={activeSlide === projects.length - 3}
               >
                 <FaChevronRight />
               </Button>
             </div>
           </div>
 
-          <motion.div
-            variants={blurFadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
+          <motion.div>
             <Slider
               ref={sliderRef}
               onActiveSlideChange={setActiveSlide}

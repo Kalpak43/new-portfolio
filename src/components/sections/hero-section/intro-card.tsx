@@ -39,7 +39,7 @@ function IntroCard() {
         variants={{
           visible: {
             transition: {
-              staggerChildren: 0.15, // control delay between each child
+              staggerChildren: 0.3, // control delay between each child
             },
           },
         }}
@@ -52,7 +52,7 @@ function IntroCard() {
           variants={{
             visible: {
               transition: {
-                staggerChildren: 0.05, // control delay between each child
+                staggerChildren: 0.15, // control delay between each child
               },
             },
           }}

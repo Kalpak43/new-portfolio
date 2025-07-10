@@ -43,7 +43,7 @@ const Slider = forwardRef<
     const scrollBy = (direction: number) => {
       if (scrollContainer.current && itemWidth) {
         scrollContainer.current.scrollTo({
-          left: scrollContainer.current.scrollLeft + direction * (itemWidth),
+          left: scrollContainer.current.scrollLeft + direction * itemWidth,
           behavior: "smooth",
         });
       }
@@ -136,15 +136,6 @@ const Slider = forwardRef<
             </div>
           ) : null
         )}
-
-        {/* Spacer to fill remaining height dynamically */}
-        <div
-          style={{
-            minWidth: itemWidth * (visibleSlidesCount - 0.5) - 32,
-            flex: "1 1 auto",
-            height: "100%",
-          }}
-        />
       </div>
     );
   }

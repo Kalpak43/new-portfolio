@@ -10,6 +10,14 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 const blogs = [
   {
+    title: "Creating a Reusable Carousel Component in React",
+    description:
+      "In this article, I will be showcasing how we can create a simple carousel component without need of any external library. I will create a barebones carousel component, to which we can apply styling based on our requirement.",
+    publishDate: "Jul 1, 2025",
+    thumbnail: "https://placehold.co/600x400?text=Blog",
+    link: "https://blogs-by-kalpak.hashnode.dev/creating-a-reusable-carousel-component-in-react",
+  },
+  {
     title: "Mastering User Management in Linux",
     description:
       "Large Enterprises usually have multiple users performing different actions on a single linux server. Ever wondered how that works? This article will dive into the depths of user management via linux. By the end you will be able to easily create users in any linux server and hand someone their credentials.",
@@ -79,7 +87,7 @@ function Blogs() {
                     sliderRef.current.next();
                   }
                 }}
-                disabled={activeSlide === blogs.length - 1}
+                disabled={activeSlide === blogs.length - 3}
               >
                 <FaChevronRight />
               </Button>
@@ -87,21 +95,23 @@ function Blogs() {
           </div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={blurFadeIn}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.01, // adjust for faster/slower stagger
-                },
-              },
-            }}
+            viewport={{ once: true, amount: 0.1 }}
           >
-            {blogs.map((blog) => (
-              <BlogCard key={blog.title} {...blog} />
-            ))}
+            <Slider
+              ref={sliderRef}
+              onActiveSlideChange={setActiveSlide}
+              slides={{ base: 1, sm: 2, md: 2, xl: 3 }}
+              autoSlide
+            >
+              {blogs.map((blog) => (
+                <SliderItem key={blog.title} className="">
+                  <BlogCard {...blog} />
+                </SliderItem>
+              ))}
+            </Slider>
           </motion.div>
         </div>
 
