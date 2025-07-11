@@ -2,7 +2,7 @@ import ProjectCard from "@/components/project-card";
 import Button from "@/components/ui/button";
 import Container from "@/components/ui/container";
 import React, { useEffect, useRef } from "react";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { blurFadeIn } from "@/lib/variants";
 import Link from "next/link";
 import Slider, { SliderItem, SliderRefType } from "@/components/ui/slider";
@@ -38,6 +38,26 @@ const projects = [
       {
         name: "Langchain",
         logo: "/assets/icons/langchain.svg",
+      },
+    ],
+  },
+  {
+    title: "react-chartjs-sunburst",
+    description: `This is an AI chat application.This project leverages the MERN stack
+          for its web application framework, Langchain for orchestrating AI
+          workflows, and the Gemini API for advanced language understanding and
+          generation.`,
+    thumbnail: "/assets/images/projects/sunburst.webp",
+    github: "https://github.com/Kalpak43/react-chartjs-sunburst",
+    deploy: "https://www.npmjs.com/package/react-chartjs-sunburst",
+    tech: [
+      {
+        name: "React",
+        logo: "/assets/icons/react.svg",
+      },
+      {
+        name: "Tailwind",
+        logo: "/assets/icons/tailwindcss.svg",
       },
     ],
   },
@@ -125,6 +145,21 @@ const projects = [
   },
 ];
 
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.3,
+      delayChildren: 0.3,
+      staggerChildren: 0.5,
+    },
+  },
+};
+
 function Projects() {
   const sliderRef = useRef<SliderRefType>(null);
   const [activeSlide, setActiveSlide] = React.useState(0);
@@ -178,7 +213,12 @@ function Projects() {
             </div>
           </div>
 
-          <motion.div>
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+          >
             <Slider
               ref={sliderRef}
               onActiveSlideChange={setActiveSlide}
