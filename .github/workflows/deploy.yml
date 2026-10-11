@@ -1,0 +1,90 @@
+# Build the Next.js static export on GitHub and deploy it to an EC2 instance over SSH
+name: Deploy Next.js site to EC2
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time; let an in-progress deploy finish
+concurrency:
+  group: "ec2-deploy"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: npm
+
+      - name: Restore Next.js build cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          # New cache whenever packages or source files change
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          # If only source files changed, rebuild from a prior cache
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with Next.js
+        run: npm run build
+
+      - name: Check static export exists
+        run: |
+          if [ ! -d out ]; then
+            echo "out/ not found. Set output: 'export' in next.config."
+            exit 1
+          fi
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: out
+          retention-days: 1
+
+  # Deployment job
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download build output
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: out
+
+      - name: Set up SSH
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$EC2_SSH_KEY" > ~/.ssh/ec2.pem
+          chmod 600 ~/.ssh/ec2.pem
+          ssh-keyscan -H "$EC2_HOST" >> ~/.ssh/known_hosts
+
+      - name: Deploy to EC2
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          rsync -az --delete -e "ssh -i ~/.ssh/ec2.pem" ./out/ "$EC2_USER@$EC2_HOST:/var/www/portfolio/"
